@@ -1,7 +1,7 @@
 ---
-title: "Personal reflections on regulation"
+title: "Personal reflections on regulation [demo content]"
 date: 2026-08-25
 summary: "Notes from a central banker's desk."
 ---
 
-Write your post here. Use a blank line between paragraphs.
+Regulation balances stability with growth. The best frameworks are proportionate, predictable, and grounded in evidence rather than fashion.

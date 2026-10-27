@@ -1,7 +1,7 @@
 ---
-title: "Quantitative economics journey"
+title: "Quantitative economics journey [demo content]"
 date: 2026-09-01
 summary: "Combining supervisory experience with quantitative analysis."
 ---
 
-Write your post here. Use a blank line between paragraphs.
+Pursuing a Master's in Economics adds formal tools to practical supervision. Econometrics, macro modeling, and data science complement field experience.

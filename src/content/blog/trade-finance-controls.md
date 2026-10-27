@@ -1,7 +1,7 @@
 ---
-title: "Trade finance controls"
+title: "Trade finance controls [demo content]"
 date: 2026-09-29
 summary: "Reviewing transactions, controls, and compliance."
 ---
 
-Write your post here. Use a blank line between paragraphs.
+Trade finance sits at the intersection of commerce and compliance. Strong controls around LCs, guarantees, and documentary collections reduce fraud and sanctions exposure.
