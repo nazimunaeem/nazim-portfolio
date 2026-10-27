@@ -1,0 +1,47 @@
+---
+import { site } from "../config";
+import "../styles/themes.css";
+const { title = site.name } = Astro.props;
+const path = Astro.url.pathname;
+const tabs = site.tabs;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Nazim</title>
+  </head>
+  <body>
+    <header>
+      <h1>Nazim</h1>
+      <nav>
+        {tabs.map((t) => (
+          <a href={t.href} class={path === t.href ? "active" : ""}>{t.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main><slot /></main>
+  </body>
+</html>
+
+<style is:global>
+  :root { --primary: #1e3a8a; --bg: #ffffff; --text: #111827; }
+  body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); padding-bottom: 64px; }
+  header { padding: 1rem 1.5rem; }
+  h1 { margin: 0; color: var(--primary); }
+  main { padding: 1rem 1.5rem; max-width: 720px; margin: auto; }
+
+  nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; background: #fff; border-top: 1px solid #e5e7eb; }
+  nav a { flex: 1; text-align: center; padding: 0.9rem 0; text-decoration: none; color: #6b7280; }
+  nav a.active { color: var(--primary); font-weight: 600; border-top: 2px solid var(--primary); }
+
+  @media (min-width: 768px) {
+    body { padding-bottom: 0; }
+    header { display: flex; justify-content: space-between; align-items: center; }
+    nav { position: static; border: 0; }
+    nav a { padding: 0.5rem 1rem; }
+    nav a.active { border-top: 0; border-bottom: 2px solid var(--primary); }
+  }
+</style>
