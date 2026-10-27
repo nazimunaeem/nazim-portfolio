@@ -18,7 +18,7 @@ const tabs = site.tabs;
       <h1>Nazim</h1>
       <nav>
         {tabs.map((t) => (
-          <a href={t.href} class={path === t.href ? "active" : ""}>{t.label}</a>
+          <a href={t.href} class={(t.href === "/" ? path === "/" : path.startsWith(t.href)) ? "active" : ""}>{t.label}</a>
         ))}
       </nav>
     </header>

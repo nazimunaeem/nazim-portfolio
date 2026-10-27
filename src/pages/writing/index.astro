@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Layout title="Writing">
+  <h2>Writing</h2>
+  {posts.map((p) => (
+    <article>
+      <h3><a href={`/writing/${p.id}`}>{p.data.title}</a></h3>
+      <small>{p.data.date.toLocaleDateString("en-GB")}</small>
+      <p>{p.data.summary}</p>
+    </article>
+  ))}
+  <p><em>Views expressed here are personal and do not represent Bangladesh Bank.</em></p>
+</Layout>
