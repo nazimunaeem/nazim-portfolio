@@ -3,8 +3,60 @@ import Layout from "../layouts/Layout.astro";
 import { site } from "../config";
 ---
 <Layout title="Home">
-  <section style="padding: 2rem 0 1rem;">
-    <h2>{site.headline}</h2>
-    <p style="font-size: 1.1rem; color: #4b4b4b;">{site.summary}</p>
+  <section class="hero">
+    <p class="eyebrow">Assistant Director · Bangladesh Bank</p>
+    <h1 class="hero-title">Nazim<br/>Uddin</h1>
+    <p class="hero-sub">{site.summary}</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="/expertise">View Expertise</a>
+      <a class="btn ghost" href="/writing">Read Writing</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong>10+</strong><span>Years in supervision</span></div>
+    <div><strong>Basel III</strong><span>Capital &amp; Pillar 3</span></div>
+    <div><strong>CAMELS</strong><span>Bank rating framework</span></div>
+  </section>
+
+  <section class="cards">
+    <a class="card" href="/about">
+      <h3>About</h3>
+      <p>From geology to central banking and financial regulation.</p>
+    </a>
+    <a class="card" href="/expertise">
+      <h3>Expertise</h3>
+      <p>Risk-based supervision, Basel III, CAMELS, trade finance.</p>
+    </a>
+    <a class="card" href="/writing">
+      <h3>Writing</h3>
+      <p>Notes on macroeconomics, resources, and the future of work.</p>
+    </a>
+    <a class="card" href="/research">
+      <h3>Research</h3>
+      <p>Selected papers and publications.</p>
+    </a>
   </section>
 </Layout>
+
+<style>
+  .hero { padding: 3rem 0 2rem; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--muted); margin: 0 0 1rem; }
+  .hero-title { font-family: 'Fraunces', serif; font-size: clamp(3rem, 10vw, 5.5rem); line-height: .95; margin: 0 0 1.25rem; letter-spacing: -0.03em; }
+  .hero-sub { font-size: 1.15rem; color: #4b4b4b; max-width: 48ch; }
+  .hero-cta { display: flex; gap: .75rem; margin-top: 2rem; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: .75rem 1.5rem; border-radius: 999px; text-decoration: none; font-weight: 600; transition: transform .2s, box-shadow .2s; }
+  .btn.primary { background: var(--primary); color: #fff; box-shadow: 0 8px 24px rgba(30,58,138,.25); }
+  .btn.ghost { border: 1px solid #d6d2c8; color: var(--text); }
+  .btn:hover { transform: translateY(-2px); }
+  .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding: 2rem 0; border-top: 1px solid #e5e1d8; border-bottom: 1px solid #e5e1d8; margin: 2rem 0; }
+  .stats div { text-align: center; }
+  .stats strong { display: block; font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--primary); }
+  .stats span { font-size: .8rem; color: var(--muted); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; margin-top: 2rem; }
+  .card { background: #fff; border: 1px solid #e5e1d8; border-radius: 14px; padding: 1.5rem; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; animation: fadeUp .5s ease both; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.06); }
+  .card h3 { margin: 0 0 .5rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 600px) { .stats { grid-template-columns: 1fr; } }
+</style>
