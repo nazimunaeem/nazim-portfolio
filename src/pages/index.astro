@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { site } from "../config";
 ---
 <Layout title="Home">
-  <h2>{site.headline}</h2>
-  <p>{site.summary}</p>
+  <section style="padding: 2rem 0 1rem;">
+    <h2>{site.headline}</h2>
+    <p style="font-size: 1.1rem; color: #4b4b4b;">{site.summary}</p>
+  </section>
 </Layout>
